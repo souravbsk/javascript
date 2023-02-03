@@ -61,5 +61,17 @@ var objectValue = Object.values(shoppingCart);
 
 console.log(shoppingCart.slie);
 // undefined
+
+// set a new item in object 
 shoppingCart['mega'] = 20;
 console.log(shoppingCart);
+/* 
+{
+    phone: 12,
+    laptop: 15,
+    mouse: 20,
+    keyboard: 10,
+    router: 15,
+    mega: 20
+  } 
+  */

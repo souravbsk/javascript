@@ -41,3 +41,6 @@ console.log(myComputer.price);
 // set property 
 myComputer.price = 50000;
 console.log(myComputer);
+// { name: 'dell', price: 50000, harddisk: '4tr', color: 'sliver' }
+
+

@@ -6,7 +6,6 @@ console.log(player);
 // [ 'neymar', 'messi', 'ronaldiho', 'kaka' ]
 
 
-
 //cut a specific value and also added a value (replace)
 var player1 = ['neymar','messi','ronaldo','ronaldiho','kaka'];
 player1.splice(2,2,'pogba')
