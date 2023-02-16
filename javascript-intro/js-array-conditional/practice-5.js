@@ -9,3 +9,6 @@ else if (trafficLight == 'yellow'){
 else{
     console.log('go');
 }
+
+
+

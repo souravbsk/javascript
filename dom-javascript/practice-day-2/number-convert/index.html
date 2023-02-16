@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-purple-600">
+    <section class="space-y-20">
+        <h1 class="text-5xl mt-9 text-center font-semibold text-white">Number Convert</h1>
+        <div class="backdrop-brightness-110 max-w-full flex justify-center items-center flex-col gap-5 p-12 w-6/12 rounded-2xl shadow-md mx-auto">
+            <input type="number" class="block text-center font-medium text-lg w-2/12 px-3 py-3 rounded-lg" name="number" id="numberInput">
+            <div class="max-w-full flex items-center md:gap-48">
+                    <button id="doubleBtn" class="bg-indigo-300 text-white text-lg font-semibold px-8 py-3 rounded-md hover:bg-yellow-500">Double</button>
+                    <button id="tripleBtn" class="bg-violet-400 text-white text-lg font-semibold px-8 py-3 rounded-md hover:bg-yellow-500">Triple</button>
+            </div>
+            <input type="number" readonly class="block text-center outline-none font-medium text-lg w-2/12 px-3 py-3 rounded-lg" name="number" id="ansInput">
+
+        </div>
+    </section>
+    <script>
+        document.getElementById('doubleBtn').addEventListener('click',function(){
+            const ansInput = document.getElementById('ansInput');
+            const numberInput = document.getElementById('numberInput');
+            const inputValueString = numberInput.value;
+            const inputValue = parseFloat(inputValueString);
+            numberInput.value = '';
+            if(isNaN(inputValue)){
+                alert('enter a number');
+                return;
+            }
+            const convertPower = Math.pow(inputValue,2);
+            ansInput.value = convertPower
+        })
+        document.getElementById('tripleBtn').addEventListener('click',function(){
+            const ansInput = document.getElementById('ansInput');
+            const numberInput = document.getElementById('numberInput');
+            const inputValueString = numberInput.value;
+            const inputValue = parseFloat(inputValueString);
+            numberInput.value = '';
+            if(isNaN(inputValue)){
+                alert('enter a number');
+                return;
+            }
+            const convertPower = Math.pow(inputValue,3);
+            ansInput.value = convertPower
+        })
+    </script>
+</body>
+
+</html>

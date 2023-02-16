@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more-event</title>
+</head>
+<body>
+    <button id="btn-click">click</button>
+    <button id="btn-move">mouse move</button>
+    <input type="text" id="text-input"/>
+
+    <script>
+        // click 
+        document.getElementById('btn-click').addEventListener('click',function (e){
+            console.log('click event apply on this btn')
+        })
+        // move 
+        document.getElementById('btn-move').addEventListener('mousemove',function (){
+            console.log('move event apply on this btn')
+        })
+        // //keypress
+        // document.getElementById('text-input').addEventListener('keypress',function (e){
+        //     console.log(e.target.value)
+        // })
+        //keydown
+        // document.getElementById('text-input').addEventListener('keydown',function (e){
+        //     console.log(e.target.value)
+        // })
+
+        //keyup
+        document.getElementById('text-input').addEventListener('keyup',function (e){
+            console.log(e.target.value)
+        })
+    </script>
+</body>
+</html>

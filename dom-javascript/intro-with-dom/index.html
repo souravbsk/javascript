@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro with DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .large-text{
+            font-size: 5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>WElcome to javascript dom playlist</h1>
+    <h2 id="place-title">javascript DOM DOM</h2>
+
+    <section id="skill">
+        <ul >
+            <li>Html </li>
+            <li>css</li>
+
+            <li>javascript</li>
+            <li>React</li>
+        </ul>
+    </section>
+    <h2 id="place-title">Tour Place</h2>
+    <ul class="place-warper" id="skillName">
+        <li class="place-item">Sondor ban </li>
+        <li class="place-item">Bandar ban</li>
+        <li class="place-item">kata ban</li>
+        <li class="coxbazar-item">cox's bazar</li>
+    </ul>
+
+    <h2 id="text-style" class="text-style-clsass classOne classTwo">Set Color attribute</h2>
+    <!-- <h2 class="large-text">Hello WORLD</h2> -->
+    <script src="js/app.js"></script>
+    <script>
+
+        // getElementsByTagName
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection)
+        // HTMLCollection(4) [li, li, li, li]
+        // for(const liContent of liCollection){
+        //     console.log(liContent.innerText)
+        // }
+
+        // getElementById
+        const placeTitle = document.getElementById('place-title');
+        placeTitle.innerText = 'top Visit Place'
+        // console.log(placeTitle)
+        // <h2 id="place-title">top Visit Place</h2>
+
+
+        // getElementsByClassName
+        const placeItem = document.getElementsByClassName('place-item');
+        // console.log(placeItem)
+        // HTMLCollection(3) [li.place-item, li.place-item, li.place-item]
+
+        // getElementsByClassName
+        const coxBazar = document.getElementsByClassName('coxbazar-item');
+        // console.log(coxBazar)
+        // HTMLCollection [li.coxbazar-item]
+
+
+        // querySelectorAll
+        const titlelist = document.querySelectorAll('#place-title');
+        console.log(titlelist)
+        // NodeList(2) [h2#place-title, h2#place-title]
+
+        const placeName = document.querySelectorAll('.place-warper li');
+        console.log(placeName)
+        // NodeList(4) [li.place-item, li.place-item, li.place-item, li.coxbazar-item]
+
+        // querySelector
+        const firstTitle = document.querySelector('#place-title');
+        console.log(firstTitle)
+        // <h2 id="place-title">top Visit Place</h2>
+
+        const firstItem = document.querySelector('.place-warper li');
+        console.log(firstItem)
+        // <li class="place-item">Sondor ban </li>
+
+
+
+
+
+
+        const titleStyle = document.getElementById('text-style');
+        titleStyle.setAttribute('title', 'set tooltip by javascript')
+        titleStyle.style.color = 'red'
+        titleStyle.style.backgroundColor = 'yellow'
+        titleStyle.style.textAlign = 'center'
+        titleStyle.style.padding = '50px 30px'
+
+
+
+        
+        const skill = document.getElementById('skill');
+        console.log(skill.innerHTML)
+        /* 
+        <ul>
+            <li>Html </li>
+            <li>css</li>
+
+            <li>javascript</li>
+            <li>React</li>
+        </ul>
+        */
+
+        skill.innerHTML = '<p>Html Change</p>'
+        console.log(skill)
+        /* 
+        <section id="skill"><p>Html Change</p></section>
+        */
+
+
+        // const titleStyle = document.getElementById('text-style');
+        // console.log(titleStyle.classList)
+
+        console.log(titleStyle.classList.add('large-text'))
+        console.log(titleStyle.classList.remove('large-text'))
+        
+        // DOMTokenList(3) ['text-style-clsass', 'classOne', 'classTwo', value: 'text-style-clsass classOne classTwo']
+
+
+
+
+        const skillName = document.getElementById('skillName');
+        const li = document.createElement('li');
+        console.log(li)
+        // <li></li>
+
+        li.innerText = 'Hello world'
+        console.log(li)
+        // <li>Hello world</li>
+
+        skillName.appendChild(li)
+
+    </script>
+</body>
+
+</html>

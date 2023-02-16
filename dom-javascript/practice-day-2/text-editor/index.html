@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <section class="max-w-full w-9/12 mx-auto mt-6 pb-8 bg-blue-300 rounded-md">
+        <h2 class="text-center py-4 text-2xl font-semibold font-mono text-slate-700">My Text Editor</h2>
+        <div class="mx-28 mt-6 py-2  border bg-blue-200 border-black px-3">
+            <div class="flex justify-between items-center py-3 border-b-2 border-slate-500">
+                <div class="flex items-center gap-2">
+                    <button id="bold" class="px-3 py-1 rounded "><i class="fa-solid fa-bold"></i></button>
+                    <button id="italic" class="px-3 py-1  rounded "><i
+                            class="fa-solid fa-italic"></i></button>
+                    <button id="underline" class="px-3 py-1  rounded"><i
+                            class="fa-solid fa-underline"></i></button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="align-left" class="px-3 py-1 rounded"><i
+                            class="fa-solid fa-align-left"></i></button>
+                    <button id="align-center" class="px-3 py-1 rounded"><i
+                            class="fa-solid fa-align-center"></i></button>
+                    <button id="align-right" class="px-3 py-1 rounded"><i
+                            class="fa-solid fa-align-right"></i></button>
+                    <button id="align-justify" class="px-3 py-1 rounded"><i
+                            class="fa-solid fa-align-justify"></i></button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input value="20" min="0" class="w-14 font-semibold rounded py-1 outline-none text-center "
+                        type="number" name="number" id="numberInput">
+                    <button id="case"
+                        class="text-slate-900 font-semibold px-3 py-1 rounded">Aa</button>
+                    <input type="color" class="rounded" name="" id="fontColor">
+                </div>
+            </div>
+            <textarea id="text-area" class="w-full mt-5 rounded-sm h-96 outline-none resize-none p-3" name="text"
+                id="textarea" cols="100" rows=""></textarea>
+        </div>
+    </section>
+    <script src="js/text.js"></script>
+</body>
+
+</html>

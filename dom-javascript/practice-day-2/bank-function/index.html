@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-purple-300">
+    <header>
+        <h1 class="text-center text-5xl font-semibold text-slate-600 mt-12">Welcome to <span
+                class="font-serif underline">Bangladesh Bank</span></h1>
+    </header>
+    <main class="max-w-full w-10/12 mx-auto">
+        <section class="relative">
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-indigo-400 px-8 py-8 rounded-lg space-y-3 shadow-lg">
+                    <h2 class="text-3xl font-medium text-red-100">Deposit</h2>
+                    <h3 class="text-5xl font-semibold text-white">$<span id="deposit-total">00</span></h3>
+                </div>
+                <div class="bg-violet-400 px-8 py-8 rounded-lg space-y-3 shadow-lg">
+                    <h2 class="text-3xl font-medium text-red-100">Withdraw</h2>
+                    <h3 class="text-5xl font-semibold text-white">$<span id="withdraw-total">00</span></h3>
+                </div>
+                <div class="bg-emerald-400 px-8 py-8 rounded-lg space-y-3 shadow-lg">
+                    <h2 class="text-3xl font-medium text-red-100">Total Balance</h2>
+                    <h3 class="text-5xl font-semibold text-white">$<span id="balance-total">1240</span></h3>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <div class="bg-indigo-600 px-8 py-8 rounded-lg space-y-3 shadow-lg">
+                    <h2 class="text-3xl font-medium text-red-100">Please Deposit</h2>
+                    <input class="block max-w-full w-9/12 px-5 py-3 rounded-2xl outline-none"
+                        placeholder="placeholder enter your deposit number" type="text" name="deposit"
+                        id="deposit-field">
+                    <button id="deposit-btn"
+                        class="bg-blue-800 hover:bg-blue-700 shadow-lg font-semibold text-lg text-white px-8 py-3 rounded-lg">Deposit</button>
+                </div>
+                <div class="bg-violet-600 px-8 py-8 rounded-lg space-y-3 shadow-lg">
+                    <h2 class="text-3xl font-medium text-red-100">Withdraw</h2>
+                    <input class="block max-w-full w-9/12 px-5 py-3 rounded-2xl outline-none"
+                        placeholder="placeholder enter your withdraw number" type="text" name="deposit"
+                        id="withdraw-field">
+                    <button id="withdraw-btn"
+                        class="bg-blue-800 hover:bg-blue-700 shadow-lg font-semibold text-lg text-white px-8 py-3 rounded-lg">Withdraw</button>
+                </div>
+            </div>
+            <div id="error-div"
+                class="backdrop-brightness-50 hidden max-w-full  p-8 sm:h-44 sm:w-5/12  rounded-3xl absolute top-2/4 sm:left-2/4 sm:-translate-x-2/4 -translate-y-2/4">
+                <div class="text-right ">
+                   <button id="error-hide-btn" class="bg-yellow-50 px-5 py-2 rounded-lg text-lg font-semibold">X</button>
+                </div>
+                <div class="flex items-center justify-center mt-3">
+                    <h2 id="error-message" class="text-2xl text-center text-white font-semibold">Sorry !!!</h2>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/bank.js"></script>
+</body>
+
+</html>

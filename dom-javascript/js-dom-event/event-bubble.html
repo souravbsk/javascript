@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubble stop propagation</title>
+    <style>
+        body {
+            border: 1px solid red;
+        }
+
+        .section {
+            border: 2px solid blue;
+        }
+
+        .div {
+            border: 2px solid red;
+        }
+
+        ul {
+            border: 2px solid purple;
+        }
+
+        .li2 {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="section" class="section">
+        <h2>Event propagation</h2>
+
+        <div id="div" class="div">
+            <ul id="ul" class="ul">
+                <li>list item-1</li>
+                <li id="li2" class="li2">list item-2</li>
+                <li>list item-3</li>
+                <li>list item-4</li>
+                <li>list item-5</li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        document.getElementById('section').addEventListener('click', function () {
+            console.log('section clicked')
+        })
+        /* 
+        section clicked
+        */
+        document.getElementById('div').addEventListener('click', function () {
+            console.log('div clicked')
+        })
+        /* 
+        div clicked
+        section clicked
+        */
+        document.getElementById('ul').addEventListener('click', function () {
+            console.log('ul clicked')
+        })
+        /* 
+        ul clicked
+        div clicked
+        section clicked
+        */
+        document.getElementById('li2').addEventListener('click', function () {
+            console.log('li clicked')
+        })
+        /*
+        li clicked
+        ul clicked
+        div clicked
+        section clicked
+        */
+
+        // stop propagation 
+        document.getElementById('li2').addEventListener('click', function () {
+            console.log('li clicked')
+        })
+        /*
+        li clicked
+        */
+
+
+        
+         document.getElementById('li2').addEventListener('click',function(e){
+            console.log('li clicked')
+            e.stopImmediatePropagation()
+        })
+        // li clicked
+        document.getElementById('li2').addEventListener('click',function(e){
+            console.log('li 2 clicked')
+        })
+        document.getElementById('li2').addEventListener('click',function(e){
+            console.log('li 3 clicked')
+        })
+
+        document.getElementById('ul').addEventListener('click',function(){
+            console.log('ul clicked')
+        })
+        document.getElementById('div').addEventListener('click',function(){
+            console.log('div clicked')
+        })
+        
+        document.getElementById('section').addEventListener('click',function(){
+            console.log('section clicked')
+        })
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        body{
+            max-width: 1200px;
+            margin:  0 auto;
+
+        }
+        .comment-container {
+            background-color: aliceblue;
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin: 20px;
+            overflow-y: scroll;
+            height: 50vh;
+        }
+        .comment{
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            border-bottom:2px solid #bebebe;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 2px 2px 10px 2px #9a9a9a;
+            line-height: 30px;
+        }
+        .comment-text{
+            background-color: aliceblue;
+            padding: 25px 25px;
+            border-radius: 25px;
+            margin: 20px;
+        }
+        .comment-text textarea{
+            border: 2px solid gray;
+            border-radius: 25px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            width:90%;
+            margin-bottom: 20px;
+        }
+        .btn-post{
+            padding: 12px 35px;
+            border: none;
+            border-color: 1px solid;
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="comment-container" class="comment-container">
+        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint id nam optio asperiores officiis, adipisci
+            amet nemo voluptates consequuntur voluptatum tempore natus expedita ratione beatae alias laborum?
+            Consequuntur culpa accusamus nisi voluptatibus nam non delectus qui magnam temporibus ipsa quos est ea
+            voluptas architecto, molestiae, at exercitationem. Dicta, blanditiis ab!</p>
+        <p class="comment">Repudiandae, nesciunt? Enim mollitia earum temporibus? Odio, officiis ipsam! Placeat magni hic ullam.
+            Nesciunt aperiam placeat consectetur molestiae distinctio eaque recusandae corporis ipsum, molestias nemo!
+            Atque, facilis impedit? Recusandae, placeat illum ratione voluptatum ex quisquam ullam nihil earum fuga,
+            facilis optio, voluptates quam hic atque perferendis aliquid veniam sint corporis?</p>
+        <p class="comment">Architecto quisquam eos ipsum temporibus beatae. Architecto dolores quibusdam asperiores ducimus impedit ea
+            error labore. Et, dolorem eum reiciendis, obcaecati error rem necessitatibus corrupti quod doloribus facere
+            rerum! Dignissimos maxime, recusandae ratione itaque eaque magni mollitia sequi vel eligendi reiciendis.
+            Accusantium cum delectus tempore, maxime tempora inventore nesciunt voluptatum. Inventore.</p>
+    </div>
+    <div class="comment-text">
+        <textarea name="" id="comment-text" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post" class="btn-post">Post</button>
+    </div>
+    <script>
+        document.getElementById('btn-post').addEventListener('click', function () {
+            const commentText = document.getElementById('comment-text');
+            const commentValue = commentText.value;
+            if(commentValue == ''){
+                return
+            }
+
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = commentValue;
+            p.classList.add('comment')
+            commentContainer.appendChild(p);
+            commentText.value = '';
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    <section>
+        <ul id="list-warper" class="list-warper">
+            <li class="item">list item - 1</li>
+            <li class="item">list item - 2</li>
+            <li class="item">list item - 3</li>
+            <li class="item">list item - 4</li>
+            <li class="item">list item - 5</li>
+        </ul>
+        <button id="btn-add">add item</button>
+    </section>
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     item.addEventListener('click',function(){
+        //         item.parentNode.removeChild(item)
+        //     })
+        // }
+
+
+            document.getElementById('list-warper').addEventListener('click', function (e){
+                const item = e.target;
+                // first way to remove child item 
+
+
+
+                item.parentNode.removeChild(item)
+                // second way to remove child item 
+
+                // item.remove()
+            })
+
+
+        const btnAdd = document.getElementById('btn-add');
+        btnAdd.addEventListener('click',function (){
+            const li = document.createElement('li');
+            li.innerText = 'brand new item';
+            li.classList.add('item')
+            const ul = document.getElementById('list-warper');
+            ul.appendChild(li)
+        })
+    </script>
+</body>
+</html>

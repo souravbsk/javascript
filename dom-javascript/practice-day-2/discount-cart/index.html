@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- <section class="max-w-full w-9/12 mx-auto">
+        <h4 class=" text-center text-3xl font-semibold">shopping cart</h4>
+        <div class="flex items-center gap-5 mt-11 bg-indigo-100 py-10 px-12 rounded-3xl">
+            <div class="w-5/12">
+                <img class="w-full rounded-3xl shadow-lg" src="imgae.jpg" alt="">
+            </div>
+            <div>
+                <h3 class="text-5xl font-semibold">Price: <span id="price">1000</span></h3>
+                <div class="flex items-center mt-7 justify-between">
+                    <h3 class="text-xl font-medium">Discount 30% :</h3>
+                    <button id="discount-btn"
+                        class="bg-indigo-300 hover:bg-indigo-100 px-4 py-1 text-lg font-medium rounded-lg shadow-md">Apply</button>
+                </div>
+                <h3 class="text-2xl text-slate-500 font-medium mt-5">Please Pay: <span id="totalPrice">00</span></h3>
+                <button class="bg-indigo-500 px-5 py-2 mt-5 rounded-lg text-lg font-semibold text-white">Buy
+                    Now</button>
+            </div>
+        </div>
+    </section> -->
+    <section class="max-w-full w-9/12 mx-auto">
+        <h4 class=" text-center text-3xl font-semibold">shopping cart</h4>
+        <div class="flex items-center gap-5 mt-11 bg-indigo-100 py-10 px-12 rounded-3xl">
+            <div class="w-5/12">
+                <img class="w-full rounded-3xl shadow-lg" src="imgae.jpg" alt="">
+            </div>
+            <div>
+                <h3 class="text-5xl font-semibold">Price: <span id="price">1000</span></h3>
+                <div class="flex mb-3 items-center mt-3 gap-3 justify-between">
+                    <h3 class="text-xl font-medium">coupon code:</h3>
+                    <input type="text" placeholder="apply coupon  for discount"
+                        class="px-2 py-3 rounded-lg outline-none" name="" id="couponInput">
+                </div>
+                <p id="invalid-error" class="text-lg text-red-400 font-semibold"></p>
+                <button id="couponBTn"
+                    class="bg-indigo-500 px-5 py-2 mt-5 rounded-lg text-lg font-semibold text-white">Apply</button>
+                <h3 class="text-2xl text-slate-500 font-medium mt-5">Please Pay: <span id="totalPrice">00</span></h3>
+                <button class="bg-indigo-500 px-5 py-2 mt-5 rounded-lg text-lg font-semibold text-white">Buy
+                    Now</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        // document.getElementById('discount-btn').addEventListener('click', function () {
+        //     const price = document.getElementById('price');
+        //     const priceValueString = price.innerText;
+        //     const priceValue = parseFloat(priceValueString);
+        //     const discount = (30 / 100);
+        //     const discountCal = priceValue * discount;
+
+        //     const totalPrice = priceValue - discountCal;
+        //     document.getElementById('totalPrice').innerText = totalPrice;
+        // })
+        document.getElementById('couponBTn').addEventListener('click', function () {
+            const copponInput = document.getElementById('couponInput');
+            const copponValue = copponInput.value;
+            const price = document.getElementById('price');
+            const priceValueString = price.innerText;
+            const priceValue = parseFloat(priceValueString);
+            if (copponValue === 'DISC30') {
+                const discount = (30 / 100);
+                const discountCal = priceValue * discount;
+
+                const totalPrice = priceValue - discountCal;
+                document.getElementById('totalPrice').innerText = totalPrice;
+            }
+            else {
+                document.getElementById('invalid-error').innerText = 'your coupon code invalid'
+                document.getElementById('totalPrice').innerText = priceValue;
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

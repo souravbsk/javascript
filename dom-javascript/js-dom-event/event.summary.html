@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom summary</title>
+</head>
+<body>
+    <h1>Final Dom Event Handlers</h1>
+
+    <h2 id="defaultText">Default Text</h2>
+    <button onclick="js()">Javascript</button>
+    <button id="react">React</button>
+
+    <h3>User Name</h3>
+    <p id="user-Name">Sourav</p>
+    <input type="text" id="text-input">
+    <button id="updateBtn">Update</button>
+    <script>
+       function js(){
+        const defaultText = document.getElementById('defaultText');
+        defaultText.innerText = 'i want to be a javascript Developer'
+       }
+
+       document.getElementById('react').addEventListener('click',function(){
+        const defaultText = document.getElementById('defaultText');
+        defaultText.innerText = 'i want to be a react developer'
+       })
+       
+
+       document.getElementById('updateBtn').addEventListener('click',function(){
+        
+        const userName = document.getElementById('user-Name');
+        const textInput = document.getElementById('text-input');
+        const text  = textInput.value;
+        userName.innerText = text;
+    
+        textInput.value = ''
+        
+       })
+
+    </script>
+</body>
+</html>
