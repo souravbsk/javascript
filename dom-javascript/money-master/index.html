@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-indigo-300">
+    <header>
+        <h1 class="text-center text-5xl sm:text-7xl mt-6 font-semibold underline text-yellow-300">Money Master 2.0</h1>
+    </header>
+    <main class="max-w-full sm:w-10/12 shadow-2xl mx-auto mt-12">
+        <section>
+            <div class="md:flex gap-8 bg-slate-50 px-2 sm:px-12 py-8 rounded-2xl items-stretch justify-between">
+                <div class="md:w-8/12">
+                    <img class="w-full h-full rounded-lg shadow-xl object-cover" src="img.jpg" alt="">
+                </div>
+                <div class="md:w-5/12 md:mt-0 mt-10 bg-slate-100 shadow-2xl px-2 sm:px-8 py-8 rounded-md">
+                    <div>
+                        <div class="max-w-full">
+                            <h2 class="text-center text-3xl font-medium mb-6">Income</h2>
+                            <div class="flex items-center gap-3 mb-4">
+                                <h3 class="text-xl font-medium max-w-full text-right  w-3/12">Income : </h3>
+                                <input type="text"
+                                    class="bg-slate-300 px-2 py-3  text-center font-semibold text-xl text-black outline-none max-w-full w-9/12"
+                                    name="income" id="income-field">
+                            </div>
+                            <h2 class="text-center text-3xl font-medium mb-6">Expanse</h2>
+                            <div class="flex items-center gap-3 mb-4">
+                                <h3 class="text-xl font-medium max-w-full  w-3/12 text-right">Food : </h3>
+                                <input type="text"
+                                    class="bg-slate-300 px-2 text-center font-semibold text-xl py-3 text-black outline-none max-w-full w-9/12"
+                                    name="income" id="food-field">
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <h3 class="text-xl font-medium max-w-full  w-3/12 text-right">Rent : </h3>
+                                <input type="text"
+                                    class="bg-slate-300 px-2 text-center font-semibold text-xl py-3 text-black outline-none max-w-full w-9/12"
+                                    name="income" id="rent-field">
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <h3 class="text-xl font-medium max-w-full  w-3/12 text-right">Clothes : </h3>
+                                <input type="text"
+                                    class="bg-slate-300 px-2 text-center font-semibold text-xl py-3 text-black outline-none max-w-full w-9/12"
+                                    name="income" id="cloth-field">
+                            </div>
+                            <div class="text-center">
+                                <button id="calculateBtn"
+                                    class="bg-blue-400 px-14 py-4 mb-8 rounded font-medium text-white text-xl">Calculate</button>
+                                <h3 class="text-3xl mb-6 font-semibold">Total Expanse: <span id="total-expanse">00</span></h3>
+                                <h3 class="text-3xl mb-3 font-semibold">Balance: <span id="total-balance">00</span></h3>
+                            </div>
+                            <div class="flex items-center flex-wrap justify-center gap-5 my-6">
+                                <div class="flex  items-center gap-3">
+                                    <h3 class="text-xl font-medium max-w-full shrink-0  text-right">Save : </h3>
+                                    <input type="text" class="bg-slate-300 font-semibold text-xl px-2 py-3 w-36 text-center text-black outline-none"
+                                        name="income" id="tax-field">
+                                </div>
+                                <span class="text-xl font-bold">%</span>
+                                <button id="savingBtn"
+                                    class="bg-blue-400 px-8 py-3 rounded font-medium text-white text-xl">Save</button>
+                            </div>
+                            <div class="text-center">
+                                
+                                <h3 class="text-3xl mb-5 font-semibold">Saving Amount: <span id="saving-total">00</span></h3>
+                                <h3 class="text-3xl font-semibold">Remaining Balance: <span id="remainingBalance">00</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/bank.js"></script>
+</body>
+
+</html>
