@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg-base-100 shadow-2xl lg:px-12">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+            </div>
+            <div class="flex-none gap-2">
+                <div class="form-control">
+                    <input type="text" placeholder="Search" class="input input-bordered" />
+                </div>
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img
+                                src="https://fastly.picsum.photos/id/900/200/200.jpg?hmac=ZrAJ9H_K0TLi9qA-7h0aKGGzI3tLtlu1lx6ntCljBfc" />
+                        </div>
+                    </label>
+                    <ul tabindex="0"
+                        class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                        <li>
+                            <a class="justify-between">
+                                Profile
+                                <span class="badge">New</span>
+                            </a>
+                        </li>
+                        <li><a>Settings</a></li>
+                        <li><a>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="mt-5 lg:px-12 flex gap-8 md:flex-row flex-col">
+            <div class="product-details grid md:grid-cols-3 sm:grid-cols-2 gap-8 max-w-full md:w-[65%]">
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40 object-fill" src="./img/coffee.jpg" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title" id="first-title">Coffee Js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus!</p>
+                        <p>Price:$<span id="first-price">110</span></p>
+                        <p>Quantity:$<span id="first-quantity">5</span></p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary" id="first-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40 object-fill" src="./img/heart_js.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Heart Js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus!</p>
+                        <p>Price:$<span>110</span></p>
+                        <p>Quantity:$<span>5</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="second-btn" class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40 object-fill" src="./img/panda.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Panda Js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus!</p>
+                        <p>Price:$<span>110</span></p>
+                        <p>Quantity:$<span>5</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="third-btn" class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40 object-fill" src="./img/umbrella.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Umbrella Js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus!</p>
+                        <p>Price:$<span>110</span></p>
+                        <p>Quantity:$<span>5</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="forth-btn" class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40 object-fill" src="./img/vue-js.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Vue Js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus!</p>
+                        <label class="flex justify-between items-center">Price: <input type="number" placeholder="$ Enter price" class="border-2 border-indigo-200 rounded-2xl w-3/5 px-2 py-1"></label>
+                        <label class="flex justify-between items-center">Quantity: <input type="number" placeholder="Enter Quality" class="border-2 border-indigo-200 rounded-2xl w-3/5 px-2 py-1"></label>
+                        <div class="card-actions justify-end">
+                            <button id="fifth-btn" class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-details bg-red-200 flex-1">
+                <h2 class="text-3xl text-center font-bold underline">Total Products: <span id="total-product">0</span></h2>
+                <div class="overflow-x-auto mt-5">
+                    <table class="table w-full">
+                      <!-- head -->
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody id="table-container">
+                        <!-- row 1 -->
+                        <!-- <tr>
+                          <th>1</th>
+                          <td>Cy Ganderton</td>
+                          <td>Quality Control Specialist</td>
+                          <td>Blue</td>
+                        </tr> -->
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th class="text-3xl" id="table-footer">00</th>
+                            <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

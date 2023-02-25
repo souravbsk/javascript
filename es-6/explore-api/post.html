@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .post{
+            background-color:#8ce8ff;
+            padding: 55px 20px;
+            border-radius: 15px;
+        }
+        .post-warpper{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Display Post</h1>
+    </header>
+    <main>
+        <div class="post-warpper" id="post-warpper">
+
+        </div>
+    </main>
+
+
+    <script src="js/post.js"></script>
+</body>
+
+</html>
