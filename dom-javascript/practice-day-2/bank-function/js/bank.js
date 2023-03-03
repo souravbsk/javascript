@@ -37,6 +37,7 @@ function calBalanceTotal(transitionName, transitionCondition) {
 
     }
     setElementValueById(balanceELementID, currentBalanceAmount)
+    return currentBalanceAmount;
 }
 
 function errorMessage() {
@@ -52,10 +53,17 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
         errorMessage()
         return
     }
+    const balanceTotal = document.getElementById('balance-total').innerText;
     const previousDepositValue = getElementValueById('deposit-total');
     const newDepositTotal = previousDepositValue + newDepositValue;
     setElementValueById('deposit-total', newDepositTotal)
-    calBalanceTotal(newDepositValue, true)
+    const getCurrentValue =  calBalanceTotal(newDepositValue, true)
+    
+
+    const li = document.createElement('li');
+    li.innerHTML = `Deposit Balance ${newDepositValue} Tk. total Balance ${balanceTotal} + ${newDepositValue} = ${getCurrentValue} Tk.`;
+    li.classList.add('list-inside','list-decimal','border-b-2','border-indigo-200', 'py-3')
+    document.getElementById('deposit-list').appendChild(li)
 })
 // withdraw balance 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
@@ -64,12 +72,19 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
         errorMessage()
         return;
     }
+    const balanceTotal = document.getElementById('balance-total').innerText;
     const previousWithdrawValue = getElementValueById('withdraw-total');
     const newWithdrawTotal = previousWithdrawValue + newWithdrawValue;
     setElementValueById('withdraw-total', newWithdrawTotal);
-    calBalanceTotal(newWithdrawValue, false)
+    const getCurrentValue = calBalanceTotal(newWithdrawValue, false)
+    
+    const li = document.createElement('li');
+    li.innerHTML = `Withdraw Balance ${newWithdrawValue} Tk. total Balance ${balanceTotal} - ${newWithdrawValue} = ${getCurrentValue} Tk.`;
+    li.classList.add('list-inside','list-decimal','border-b-2','border-indigo-200', 'py-3')
+    document.getElementById('withdraw-list').appendChild(li)
 })
 
 document.getElementById('error-hide-btn').addEventListener('click', function () {
     document.getElementById('error-div').classList.add('hidden');
+
 })
