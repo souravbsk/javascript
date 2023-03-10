@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+</head>
+<body>
+    <h1><span id="count">00</span></h1>
+    <button onclick="start()">Start</button><button onclick="stop()">Stop</button><button onclick="restart()">Restart</button>
+    <script>
+        const count = document.getElementById('count').innerText;
+        let countvalue = parseInt(count);        
+        function start(){
+            stopCount =  setInterval(() => {
+                countvalue =  countvalue + 1;
+                document.getElementById('count').innerText= (countvalue);
+        }, 1000);
+        }
+        function stop(){
+            clearInterval(stopCount)
+        }
+        function restart () {
+            countvalue = 0;
+            document.getElementById('count').innerText= (countvalue);
+
+        }
+    </script>
+</body>
+</html>

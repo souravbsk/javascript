@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Time: <span id="timer">00</span></h1>
+    <button onclick="start()" id="start">start</button>
+    <button onclick="end()" id="end">end</button>
+    <button onclick="restart()" id="restart">restart</button>
+    <!-- <script src="interval.js"></script> -->
+    <script>
+        const timer = document.getElementById('timer');
+        let count = parseFloat(timer.innerText);
+        
+        let stopWatch;
+        function start() {
+            stopWatch = setInterval(() => {
+                count++;
+                timer.innerText = count;
+
+            }, 1000);
+        }
+        function end(){
+            clearInterval(stopWatch)
+        }
+        function restart(){
+            count = 0
+            timer.innerText = 00;
+        }
+
+    </script>
+</body>
+
+</html>

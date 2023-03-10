@@ -63,6 +63,10 @@ const displayAiTools = (datas) => {
             aiCardContainer.appendChild(div)
         });
 
+        sorting =  datas.sort((a, b) => {
+            return new Date(a.published_in) - new Date(b.published_in)
+        })
+
         dataLoadingSpinner(false)
 
 
@@ -181,9 +185,6 @@ const dataLoadingSpinner = (isSpinner) => {
 
 // sorting with date 
 const sortingData = () => {
-    sorting.sort((a, b) => {
-        return new Date(a.published_in) - new Date(b.published_in)
-    })
     dataLoadingSpinner(true)
     displayAiTools(sorting)
 }
