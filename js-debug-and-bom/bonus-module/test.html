@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	      
+
+	<style>
+	* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.container_ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+/*     height: 100vh; */
+    color: aliceblue;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+.item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+	font-family: 'Bahnschrift', sans-serif !important;
+    
+}
+.item .count_text{
+    font-weight: 300;
+    font-size: 15px;
+	margin: 0;
+    
+}
+
+.item .count_down {
+    font-size: 40px;
+	font-family: 'Bahnschrift', sans-serif !important;
+    background-image: linear-gradient(rgb(231, 40, 49), rgb(249, 159, 27));
+    padding: 0 10px;
+    border-radius: 15px;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 60px;
+	margin:0;
+
+}
+.count_time {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:500px) {
+    .item .count_down {
+        font-size: 30px;
+        padding: 0px 5px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+		line-height: 50px;
+    }
+}
+.result-hidden-section{
+	display:none;
+}
+
+	</style>
+
+</head>
+
+<body>
+    <div class="container_">
+        <div class="main">
+            <div class="item">
+                <div class="count_time">
+                    <h4 class="count_down" id="day_">00</h4>
+                </div>
+                <div class="count_id">
+                    <h4 class="count_text">Days</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="count_time">
+                    <h4 class="count_down" id="hour_">00</h4>
+                </div>
+                <div class="count_id">
+                    <h4 class="count_text">Hours</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="count_time">
+                    <h4 class="count_down" id="minute_">00</h4>
+                </div>
+                <div class="count_id">
+                    <h4 class="count_text">Minutes</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="count_time">
+                    <h4 class="count_down" id="second_">00</h4>
+                </div>
+                <div class="count_id">
+                    <h4 class="count_text">Seconds</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+	
+// 		enter your event date 
+// 		
+// 		
+// 		count down time set for every lotter
+// 		
+// 		
+let endDateElm = "18 MARCH 2023 08:42 pm"
+
+////
+
+
+// let countDownItem = Array.from(document.querySelectorAll('.count_down'))
+const days = document.getElementById('day_');
+const hours = document.getElementById('hour_');
+const minute = document.getElementById('minute_');
+const second = document.getElementById('second_')
+
+
+
+// show counter vlue 
+const showTimerDisplay = (time, counterID) => {
+    if (time < 10) {
+        counterID.innerText = `0${time}`
+    }
+    else {
+        counterID.innerText = `${time}`
+    }
+}
+
+function countDown() {
+    let endDate = new Date(endDateElm);
+    let newDate = new Date();
+    let dateDiff = (endDate - newDate) / 1000;
+    if(dateDiff < 5 && dateDiff > 4){
+        console.log('ldf');
+    }
+    if (dateDiff > 0) {
+        let day = Math.floor(dateDiff / 3600 / 24);
+        let hour = Math.floor(dateDiff / 3600) % 24;
+        let min = Math.floor(dateDiff / 60) % 60;
+        let sec = Math.floor(dateDiff % 60);
+
+        showTimerDisplay(day,days)
+        showTimerDisplay(hour,hours)
+        showTimerDisplay(min,minute)
+        showTimerDisplay(sec,second)
+    }
+    
+	else {
+		console.log('dateDiff');
+		
+		// document.getElementById("result-hidden-section").style.display = "block";
+		
+        clearInterval(stop)
+    }
+
+}
+let stop = setInterval(() => {
+    countDown();
+}, 1000);
+
+
+	</script>
+</body>
+
+</html>

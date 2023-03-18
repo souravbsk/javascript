@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <h1 class="font-semibold text-center mb-5 text-5xl">Slider</h1>
+        <div class="w-6/12 mx-auto  h-96 relative">
+            <div>
+                <div>
+                    <img id="sliderImg" class="w-full h-fit" src="images/pic-1.jpg" alt="">
+                </div>
+                <button
+                    class="absolute translate-x-1/2 z- font-semibold z-20 top-1/2 right-0 text-4xl text-white bg-black rounded-full px-3 py-1"
+                    id="rightBtn">></button>
+                <button
+                    class="absolute  z-20 top-1/2 -left-5 font-semibold text-4xl text-white bg-black rounded-full px-3 py-1"
+                    id="leftBtn">
+                    < </button>
+
+            </div>
+            <div class="mt-5 flex justify-center items-center cursor-pointer gap-4" id="dots">
+                <span class="dot h-3 w-3 rounded-full block bg-gray-500"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+        const img = [
+            'images/pic-1.jpg',
+            'images/pic-2.jpg',
+            'images/pic-3.jpg',
+            'images/pic-4.jpg',
+            'images/pic-5.jpg',
+            'images/pic-6.jpg',
+            'images/pic-7.jpg',
+            'images/pic-8.jpg',
+            'images/pic-9.jpg',
+        ]
+
+        let imgIndex = 0;
+        const sliderImg = document.getElementById("sliderImg");
+
+
+
+        document.getElementById("rightBtn").addEventListener("click", () => {
+            imgIndex++
+            if (imgIndex < img.length) {
+                ImgChange(imgIndex)
+            }
+            else {
+                imgIndex = 0;
+
+            }
+
+        })
+        document.getElementById("leftBtn").addEventListener("click", () => {
+            if (imgIndex <= 0) {
+                imgIndex = img.length
+            }
+            imgIndex--;
+            console.log(imgIndex);
+            ImgChange(imgIndex)
+
+
+        })
+
+        setInterval(() => {
+            if (imgIndex === img.length) {
+                imgIndex = 0
+            }
+            ImgChange(imgIndex)
+            imgIndex++
+        }, 3000);
+
+        const dots = document.getElementsByClassName("dot")
+        const ImgChange = (index) => {
+        [...dots].map(dot => dot.style.backgroundColor = "gray")
+        dots[imgIndex].style.backgroundColor = "red"
+            sliderImg.setAttribute('src', img[index])
+
+        }
+
+        document.getElementById("dots").innerHTML = `${img.map(img => `<span class="dot h-3 w-3 rounded-full block bg-gray-500"></span>`).join('')}`
+
+       
+        ImgChange(0)
+        
+    </script>
+</body>
+
+</html>
