@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Word</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .inputField {
+            padding: 10px 5px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-btn {
+            padding: 10px 25px;
+            border-radius: 8px;
+        }
+
+        #item-list {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="item-list">
+        <div>
+            <ul id="sorting-data">
+            </ul>
+            <input class="inputField" type="text" id="word-input-field">
+            <br>
+            <button id="word-add" class="input-btn">Add</button>
+        </div>
+    </div>
+
+    <script>
+        const wordData = ["apple", "banana", 'jamun'];
+        const sortingData = document.getElementById("sorting-data");
+        const wordField = document.getElementById("word-input-field");
+        document.getElementById('word-add').addEventListener('click', () => {
+            const wordFieldValue = wordField.value;
+            if (!wordFieldValue) {
+                return
+            }
+            displayData(wordFieldValue);
+            wordField.value = '';
+        })
+        const displayData = word => {
+            wordData.push(word);
+            console.log(wordData);
+            sortingData.textContent = ''
+            wordData.sort();
+            console.log(wordData);
+            showData()
+        }
+        const showData = () => {
+            wordData.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = item
+                sortingData.appendChild(li)
+
+            })
+        }
+        showData()
+    </script>
+</body>
+
+</html>
